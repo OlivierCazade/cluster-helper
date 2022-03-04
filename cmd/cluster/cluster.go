@@ -10,5 +10,6 @@ func NewClusterCmd(home string) *cobra.Command {
 	// clusterCmd.AddCommand(newAddClusterCmd(home))
 	clusterCmd.AddCommand(newListClusterCmd(home))
 	clusterCmd.AddCommand(newCreateClusterCmd(home))
+	clusterCmd.AddCommand(newKubeconfigClusterCmd(home))
 	return clusterCmd
 }
