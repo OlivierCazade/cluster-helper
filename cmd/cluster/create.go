@@ -24,6 +24,9 @@ func initInstallConfig(home string, clusterName string, configName string) error
 	configPath := home + "/cluster/" + clusterName + "/install-config.yaml"
 
 	data, err := ioutil.ReadFile(home + "/config/" + configName + ".yaml")
+	if err != nil {
+		return err
+	}
 	var config map[string]interface{}
 	err = yaml.Unmarshal(data, &config)
 	if err != nil {
