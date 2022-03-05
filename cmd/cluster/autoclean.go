@@ -67,6 +67,12 @@ func newAutocleanCmd(home string) *cobra.Command {
 				kubeconfig.Reset()
 
 			}
+
+			if len(res) == 0 {
+				fmt.Println("Nothing to clean")
+				return
+			}
+
 			fmt.Println("WARNING! This will remove:")
 			for _, cluster := range res {
 				fmt.Println("  - " + cluster)
